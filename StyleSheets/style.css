@@ -1,4 +1,9 @@
 
+:root
+{
+  --centerPaneWidth: 50%;
+}
+
 html
 {
   width: 100%;
@@ -6,7 +11,13 @@ html
   padding: 2% 4% 2% 4%;
   margin: 0%;
 }
-
+@media only screen and (max-width : 320px)
+{
+  :root
+  {
+    --centerPaneWidth: 50%;
+  }
+}
 .ContentWrapper
 {
   display: flex;
@@ -17,7 +28,7 @@ html
 
 .ContentWrapper .CenterPane
 {
-  width: 50%;
+  width: var(--centerPaneWidth);
   text-align: justify;
   word-wrap: break-word;
 }
@@ -25,4 +36,10 @@ html
 .ContentWrapper .CenterPane a
 {
 
+}
+
+.dropdown-toggle:focus
+{
+  outline: none;
+  box-shadow: none;
 }
