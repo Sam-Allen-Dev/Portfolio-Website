@@ -11,13 +11,14 @@ html
   padding: 2% 4% 2% 4%;
   margin: 0%;
 }
-@media only screen and (max-width : 320px)
+
+ul
 {
-  :root
-  {
-    --centerPaneWidth: 50%;
-  }
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
 }
+
 .ContentWrapper
 {
   display: flex;
