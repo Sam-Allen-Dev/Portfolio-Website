@@ -1,0 +1,166 @@
+<html>
+
+  <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "./StyleSheets/style.css">
+  </head>
+
+  <body>
+    <h6>
+      <ul class="nav justify-content-start" style="position: absolute;">
+        <li class="nav-item">
+          <a class="nav-link active" style="color: black;" aria-current="page" href="index.html">Home</a>
+        </li>
+      </ul>
+
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="aboutMe.html">About Me</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: black;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connect</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" style="width: 20%;">
+              &nbsp;&nbsp;Gmail
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="./SVG/linkedIn.svg" style="width: 20%;">
+              &nbsp;&nbsp;LinkedIn
+            </a>
+          </div>
+        </li>
+      </ul>
+    </h6>
+
+    <br><br><br><br>
+
+    <div class="ContentWrapper">
+      <div class="CenterPane">
+        <h4>
+          DYNAMIC INHERITANCE FRAMEWORK
+          <br><br><br>
+        </h4>
+        <h5>
+          Description
+          <br><br>
+        </h5>
+        <p>
+          This framework adds an easy way to create classes which can be reflected dynamically by any object in GameMaker Studio 2.3+.
+          The aim of this system is to provide developers a simple way to maximise code reuse and simplicity within their GameMaker Studio 2 projects.
+
+          <br><br>
+        </p>
+        <h5>
+          Creating a new PseudoClass
+          <br><br>
+        </h5>
+        <p>
+          Any object can be inherited from dynamically if it is a child of the PseudoClass object.
+          To create a new PseudoClass object, simply create a new object and change its parent to be PseudoClass.
+          Once this is completed, any object which inherits the PseudoClassUser can implement from this new PseudoClass dynamically.
+          <br><br>
+        </p>
+        <h5>
+          Implementing a PseudoClass Dynamically
+          <br><br>
+        </h5>
+        <p>
+          Once you have created a new object to inherit from, the next step is to implement that object.
+          To do this, create an object and set its parent to be PseudoClassUser.
+          With your new PseudoClassUser, you can now implement and stop implementing classes with the following methods.
+          <br><br>
+        </p>
+
+        <style>.hljs{padding:0.5em;color:#ABB2BF;display:block;}.hljs-params{color:#D19B66;}.hljs-name{color:#E5C07A;}.hljs-quote{color:#5C6370;}.hljs-builtin-name{color: #56B6C2;}.hljs-meta{color:#149b93;}.hljs-class{color:#E5C07A;}.hljs-literal{color: #56B6C2;}.hljs-string{color:#98C379;}.hljs-comment{color:#5C6370;}.hljs-section{color:#E5C07A;}.hljs-number{color: #D19B66;}.hljs-template-variable{color:#E5C07A;}.hljs-type{color:#D19B66;}.hljs-keyword{color:#C678DD;}.hljs-selector-tag{color:#C678DD;}.hljs-variable{color:#E5C07A;}.hljs-title{color:#E5C07A;}.hljs-emphasis{font-style:italic;}.hljs-selector-id{color:#E5C07A;}.hljs-addition{color:#98C379;}.hljs-link{color:#E5C07A;}.hljs-tag{color:#E5C07A;}.hljs-deletion{color:#E5C07A;}.hljs-function{color:#E5C07A;}.hljs-strong{font-weight:bold;}.hljs-attribute{color:#E5C07A;}.hljs-regexp{color:#E5C07A;}.hljs-bullet{color:#98C379;}.hljs-selector-class{color:#E5C07A;}.hljs-symbol{color:#98C379;}.hljs-built_in{color: #56B6C2;}</style><pre><code class="hljs" style="background:#282C34;border-radius:8px">
+        <span class="hljs-comment">// Inherit the parent event:</span>
+
+        <span class="hljs-built_in">event_inherited</span>();
+
+        <span class="hljs-comment">// Implement from the NewPseudoClass object:</span>
+
+        implements(NewPseudoClass);
+
+        <span class="hljs-comment">// Check if we are implementing the NewPseudoClass object:</span>
+
+        <span class="hljs-keyword">if</span> (isImplementing(NewPseudoClass))
+        {
+            <span class="hljs-comment">// Stop implementing the NewPseudoClass object:</span>
+
+            stopImplementing(NewPseudoClass);
+        }
+        </code></pre>
+
+        <h5>
+          <br><br>
+          Finding Each Instance of a PseudoClass
+          <br><br>
+        </h5>
+        <p>
+          One of the benefits of having dynamic inheritance is being able to categorise each object which is implementing a desirable behaviour.
+          In this framework, this can be done in the following way.
+          <br><br>
+        </p>
+
+        <style>.hljs-keyword{color:#C678DD;}.hljs-title{color:#E5C07A;}.hljs-template-variable{color:#E5C07A;}.hljs-class{color:#E5C07A;}.hljs-function{color:#E5C07A;}.hljs-deletion{color:#E5C07A;}.hljs-emphasis{font-style:italic;}.hljs-quote{color:#5C6370;}.hljs-selector-id{color:#E5C07A;}.hljs-strong{font-weight:bold;}.hljs-selector-class{color:#E5C07A;}.hljs-built_in{color: #56B6C2;}.hljs-selector-tag{color:#C678DD;}.hljs-literal{color: #56B6C2;}.hljs-meta{color:#149b93;}.hljs-variable{color:#E5C07A;}.hljs-number{color: #D19B66;}.hljs-regexp{color:#E5C07A;}.hljs-symbol{color:#98C379;}.hljs-comment{color:#5C6370;}.hljs-builtin-name{color: #56B6C2;}.hljs-name{color:#E5C07A;}.hljs-type{color:#D19B66;}.hljs-params{color:#D19B66;}.hljs-tag{color:#E5C07A;}.hljs-bullet{color:#98C379;}.hljs-attribute{color:#E5C07A;}.hljs{display:block;padding:0.5em;color:#ABB2BF;}.hljs-link{color:#E5C07A;}.hljs-string{color:#98C379;}.hljs-section{color:#E5C07A;}.hljs-addition{color:#98C379;}</style><pre><code class="hljs" style="background:#282C34;border-radius:8px">
+        <span class="hljs-keyword">var</span> mapSize, key, map, instance;
+
+        <span class="hljs-comment">// Get a map of each object implementing NewPseudoClass:</span>
+
+        map = PseudoClassTracker.getImplementing(NewPseudoClass);
+
+        <span class="hljs-comment">// Iterate through the map:</span>
+
+        mapSize = <span class="hljs-built_in">ds_map_size</span>(map);
+        key = <span class="hljs-built_in">ds_map_find_first</span>(map);
+
+        <span class="hljs-keyword">repeat</span> (mapSize)
+        {
+            instance = <span class="hljs-built_in">ds_map_find_value</span>(map, key);
+
+            key = <span class="hljs-built_in">ds_map_find_next</span>(map, key);
+        }
+
+        <span class="hljs-comment">// Remove reference to map ID:</span>
+
+        map = <span class="hljs-literal">undefined</span>;
+        </code></pre>
+
+        <h5>
+          <br><br>
+          Dependencies
+          <br><br>
+        </h5>
+        <p>
+          The framework currently requires that the PseudoClassTracker object is present in any room you are using the framework.
+          I recommend that you use an object which will help manage your dependencies for each room, and include the PseudoClassTracker for simplicity.
+
+          <br><br>
+
+          Additionally, this framework was made for GameMaker Studio 2.3 and above, it will not work on older versions of GameMaker Studio 2 or any version of GameMaker Studio 1 or below.
+        </p>
+      </div>
+    </div>
+
+  </body>
+
+  <footer>
+    <br><br><br><br><br><br><br><br>
+
+    <p style="text-align: right;">
+      Portfolio 2021
+      <br>
+      Designed and developed by me
+      <br>
+      <a href="#" class="link-dark" target=”_blank”>
+        info
+      </a>
+    </p>
+    <br><br>
+  </footer>
+
+</html>
