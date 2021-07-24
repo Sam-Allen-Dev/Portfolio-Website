@@ -34,11 +34,6 @@ ul
   word-wrap: break-word;
 }
 
-.ContentWrapper .CenterPane a
-{
-
-}
-
 .dropdown-toggle:focus
 {
   outline: none;
