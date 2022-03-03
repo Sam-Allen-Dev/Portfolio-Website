@@ -46,7 +46,7 @@ function createFooter()
         <br>
         Designed and developed by me
         <br>
-        <a href="#" class="link-dark" target=”_blank”>
+        <a href="aboutMe.html" class="link-dark">
           info
         </a>
       </p>
